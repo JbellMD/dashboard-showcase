@@ -1,8 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard Showcase
+
+A modern dashboard application that showcases Next.js 14, React Server Components, TypeScript, Shadcn/UI, and Tailwind CSS. This project demonstrates contemporary web development best practices including responsive design, performance optimization, and component-driven architecture.
+
+![Dashboard Screenshot](https://github.com/JbellMD/dashboard-showcase/raw/main/public/dashboard-screenshot.png)
+
+## Features
+
+- **Modern Frontend Stack**: Built with Next.js 14, TypeScript, and React
+- **Responsive Design**: Fully responsive interface that works on all device sizes
+- **Server Components (RSC)**: Leverages React Server Components for improved performance
+- **Server-Side Rendering (SSR)**: Optimized for SEO and initial load performance
+- **Client-Side Interactivity**: Interactive charts and data visualization with Recharts
+- **Dark Mode Support**: Built-in theme switcher with system preference detection
+- **Form Validation**: Type-safe form handling with React Hook Form and Zod
+- **Component Library**: Utilizes Shadcn/UI for accessible, customizable components
+- **Optimized Bundle Size**: Efficient code splitting and tree shaking for fast loading
+- **TypeScript**: Fully typed codebase for better developer experience and code quality
+
+## Technology Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Components**: [Shadcn/UI](https://ui.shadcn.com/)
+- **State Management**: React's built-in hooks
+- **Charts**: [Recharts](https://recharts.org/) for data visualization
+- **Forms**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://github.com/colinhacks/zod)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Theme Switching**: [next-themes](https://github.com/pacocoursey/next-themes)
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +49,59 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/src
+  /app                    # Next.js App Router
+    /(routes)             # Page routes
+    /layout.tsx           # Root layout with providers
+  /components             # React components
+    /charts               # Chart components with Recharts
+    /forms                # Form components with React Hook Form
+    /layout               # Layout components (sidebar, navbar)
+    /tables               # Table components
+    /ui                   # Shadcn UI components
+  /lib                    # Utility functions and data
+```
+
+## Performance Optimizations
+
+This project implements several performance optimizations:
+
+- **React Server Components (RSC)**: Server-side rendering for better initial load performance
+- **Code Splitting**: Each page loads only the JavaScript needed for that page
+- **Lazy Loading**: Components and routes are loaded only when needed
+- **Image Optimization**: Next.js Image component for optimized image loading
+- **Font Optimization**: Built-in font optimization with Next.js
+
+## Deployment
+
+The application is ready for deployment on platforms like Vercel, Netlify, or any hosting service that supports Next.js. For production builds, run:
+
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Shadcn/UI Documentation](https://ui.shadcn.com/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Recharts Documentation](https://recharts.org/en-US/guide)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT License](LICENSE)

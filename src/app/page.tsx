@@ -2,6 +2,8 @@ import DashboardLayout from "@/components/layout/dashboard-layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart3, Users, ArrowUpRight, ArrowDownRight, DollarSign, Activity } from "lucide-react";
+import { PerformanceChart } from "@/components/charts/performance-chart";
+import { PlatformDistribution } from "@/components/charts/platform-distribution";
 
 // This is a Server Component - demonstrating RSC capabilities
 export default function Home() {
@@ -79,7 +81,7 @@ export default function Home() {
                     Daily user activity for the last 30 days
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="h-[240px]">
                   <PerformanceChart />
                 </CardContent>
               </Card>
@@ -90,7 +92,7 @@ export default function Home() {
                     Distribution by platform
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="h-[240px]">
                   <PlatformDistribution />
                 </CardContent>
               </Card>
@@ -183,22 +185,5 @@ function AnalyticsCard({
         </p>
       </CardContent>
     </Card>
-  );
-}
-
-// These would be client components with 'use client' directive in real application
-function PerformanceChart() {
-  return (
-    <div className="h-[240px] flex items-center justify-center bg-muted/30 rounded-md">
-      <p className="text-sm text-muted-foreground">Interactive chart would render here using Recharts</p>
-    </div>
-  );
-}
-
-function PlatformDistribution() {
-  return (
-    <div className="h-[240px] flex items-center justify-center bg-muted/30 rounded-md">
-      <p className="text-sm text-muted-foreground">Pie chart showing distribution would render here</p>
-    </div>
   );
 }
