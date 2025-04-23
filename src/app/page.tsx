@@ -45,7 +45,6 @@ export default function Home() {
                 description={`${analytics.userGrowth}% from last month`}
                 icon={<Users className="h-4 w-4" />}
                 trend="up"
-                trendValue={analytics.userGrowth}
               />
               <AnalyticsCard 
                 title="Revenue"
@@ -53,7 +52,6 @@ export default function Home() {
                 description={`${Math.abs(analytics.revenueGrowth)}% from last month`}
                 icon={<DollarSign className="h-4 w-4" />}
                 trend="down"
-                trendValue={analytics.revenueGrowth}
               />
               <AnalyticsCard 
                 title="Active Users"
@@ -61,7 +59,6 @@ export default function Home() {
                 description={`${analytics.activeGrowth}% from last month`}
                 icon={<Activity className="h-4 w-4" />}
                 trend="up"
-                trendValue={analytics.activeGrowth}
               />
               <AnalyticsCard 
                 title="Conversion Rate"
@@ -69,7 +66,6 @@ export default function Home() {
                 description="Of total visitors"
                 icon={<BarChart3 className="h-4 w-4" />}
                 trend="neutral"
-                trendValue={0}
               />
             </div>
             
@@ -142,15 +138,13 @@ function AnalyticsCard({
   value, 
   description, 
   icon, 
-  trend,
-  trendValue 
+  trend
 }: { 
   title: string;
   value: string;
   description: string;
   icon: React.ReactNode;
   trend: 'up' | 'down' | 'neutral';
-  trendValue: number;
 }) {
   return (
     <Card>
