@@ -19,21 +19,21 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 // Define the form validation schema with Zod
 const notificationFormSchema = z.object({
-  emailNotifications: z.boolean().default(true),
-  pushNotifications: z.boolean().default(true),
-  smsNotifications: z.boolean().default(false),
-  marketingEmails: z.boolean().default(false),
-  emailDigestFrequency: z.enum(["daily", "weekly", "never"]).default("weekly"),
-  commentNotifications: z.boolean().default(true),
-  mentionNotifications: z.boolean().default(true),
-  updateNotifications: z.boolean().default(true),
-  securityNotifications: z.boolean().default(true),
+  emailNotifications: z.boolean(),
+  pushNotifications: z.boolean(),
+  smsNotifications: z.boolean(),
+  marketingEmails: z.boolean(),
+  emailDigestFrequency: z.enum(["daily", "weekly", "never"]),
+  commentNotifications: z.boolean(),
+  mentionNotifications: z.boolean(),
+  updateNotifications: z.boolean(),
+  securityNotifications: z.boolean(),
 });
 
 type NotificationFormValues = z.infer<typeof notificationFormSchema>;
 
 // This would come from your user preferences data in a real app
-const defaultValues: Partial<NotificationFormValues> = {
+const defaultValues: NotificationFormValues = {
   emailNotifications: true,
   pushNotifications: true,
   smsNotifications: false,
