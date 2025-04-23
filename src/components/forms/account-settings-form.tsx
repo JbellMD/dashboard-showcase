@@ -40,9 +40,9 @@ const accountFormSchema = z.object({
     .min(8, { message: "Password must be at least 8 characters." })
     .optional(),
   confirmPassword: z.string().optional(),
-  twoFactorAuth: z.boolean().default(false),
-  language: z.string().default("en"),
-  timezone: z.string().default("UTC"),
+  twoFactorAuth: z.boolean(),
+  language: z.string(),
+  timezone: z.string(),
 }).refine((data) => {
   // Only validate passwords match if newPassword has been provided
   if (data.newPassword && data.newPassword !== data.confirmPassword) {
@@ -57,11 +57,11 @@ const accountFormSchema = z.object({
 type AccountFormValues = z.infer<typeof accountFormSchema>;
 
 // This would come from your user data in a real app
-const defaultValues: Partial<AccountFormValues> = {
+const defaultValues: AccountFormValues = {
   username: "johndoe",
   currentPassword: "",
-  newPassword: "",
-  confirmPassword: "",
+  newPassword: undefined,
+  confirmPassword: undefined,
   twoFactorAuth: true,
   language: "en",
   timezone: "America/New_York",
