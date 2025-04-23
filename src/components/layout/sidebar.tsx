@@ -56,7 +56,7 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
   return (
     <aside 
       className={cn(
-        "fixed inset-y-0 left-0 z-50 flex h-full flex-col border-r bg-background transition-all duration-300 ease-in-out",
+        "flex h-full flex-col border-r bg-background transition-all duration-300 ease-in-out",
         isOpen ? "w-64" : "w-[70px]"
       )}
     >

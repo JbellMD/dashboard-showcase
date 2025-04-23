@@ -6,9 +6,7 @@ import { ApiError } from '../middlewares/error.middleware';
 
 // Generate JWT token
 const generateToken = (id: string) => {
-  return jwt.sign({ id }, config.jwtSecret, {
-    expiresIn: config.jwtExpiresIn,
-  });
+  return jwt.sign({ id }, config.jwtSecret as string, { expiresIn: config.jwtExpiresIn as string } as jwt.SignOptions);
 };
 
 // Register a new user
@@ -35,7 +33,7 @@ export const register = async (
     });
 
     // Generate token
-    const token = generateToken(user._id);
+    const token = generateToken(String((user._id as any)));
 
     // Return user data without password
     res.status(201).json({
@@ -79,7 +77,7 @@ export const login = async (
     await user.save();
 
     // Generate token
-    const token = generateToken(user._id);
+    const token = generateToken(String((user._id as any)));
 
     res.status(200).json({
       success: true,
